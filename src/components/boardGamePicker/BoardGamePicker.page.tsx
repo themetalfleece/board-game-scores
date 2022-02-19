@@ -1,4 +1,5 @@
 import { Typography, Box } from "@mui/material";
+import { BoardGameChooseButton } from "../boardGameChooseButton/BoardGameButton.component";
 
 export const BoardGamePicker: React.FC<{}> = () => {
   return (
@@ -10,6 +11,7 @@ export const BoardGamePicker: React.FC<{}> = () => {
       sx={{ gap: (theme) => theme.spacing(1) }}
     >
       <Typography variant="h4">Choose your game</Typography>
+      <BoardGameChooseButton>Lost Cities Rivals</BoardGameChooseButton>
     </Box>
   );
 };

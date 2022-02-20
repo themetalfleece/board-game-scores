@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import { BoardGameChooseButton } from "../boardGameChooseButton/BoardGameButton.component";
+import { BoardGameChooseButton } from "../boardGameChooseButton/BoardGameChooseButton.component";
 
 export const BoardGamePicker: React.FC<{}> = () => {
   return (

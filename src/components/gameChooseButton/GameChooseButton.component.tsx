@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 
 /** a button which navigates to the corresponding board game page on click */
-export const BoardGameChooseButton: React.FC<{ gamePath: string }> = ({
+export const GameChooseButton: React.FC<{ gamePath: string }> = ({
   gamePath,
   children,
 }) => {

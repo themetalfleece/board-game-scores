@@ -1,3 +1,3 @@
-export const boardGameRoutes = {
+export const gameRoutes = {
   lostCitiesRivals: "lost-cities-rivals",
 };

@@ -4,13 +4,13 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { CssBaseline } from "@mui/material";
 import { Box } from "@mui/system";
-import { BoardGamePicker } from "./components/boardGamePicker/BoardGamePicker.page";
+import { RoutedBoardGames } from "./components/routedBoardGames/RoutedBoardGames.router";
 
 function App() {
   return (
     <CssBaseline>
       <Box m={2}>
-        <BoardGamePicker />
+        <RoutedBoardGames />
       </Box>
     </CssBaseline>
   );

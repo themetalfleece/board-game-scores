@@ -1,6 +1,6 @@
 import { Route } from "react-router";
 import { Routes } from "react-router-dom";
-import { GamePicker } from "../gamePicker/gamePicker.page";
+import { GamePicker } from "../gamePicker/GamePicker.page";
 import { LostCitiesRivals } from "../lostCitiesRivals/LostCitiesRivals.page";
 import { gameRoutes } from "./gameRoutes";
 

@@ -1,3 +1,11 @@
+import { useSelector } from "./useSelector.hook";
+
 export const LostCitiesRivals: React.FC<{}> = () => {
-  return <div>Lost Cities Rivals</div>;
+  const state = useSelector();
+
+  return (
+    <div>
+      Lost Cities Rivals {JSON.stringify(state.players)}
+    </div>
+  );
 };

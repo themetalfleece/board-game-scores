@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { reducer as lostCitiesRivalsReducer } from "../components/lostCitiesRivals/lostCitiesRivals.slice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    lostCitiesRivals: lostCitiesRivalsReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

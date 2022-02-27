@@ -1,12 +1,11 @@
-name: "Deploy"
+name: Deploy
 on:
   push:
     branches:
       - main
 
-# what the action will do
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

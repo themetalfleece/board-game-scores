@@ -1,15 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface PlayerI {
-  name: string;
-  stacks: StackI[];
-}
-
-interface StackI {
-  multipliers: number;
-  singlePointers: number;
-  doublePointers: number;
-}
+import { PlayerI } from "./players/player.type";
+import { StackI } from "./stacks/stack.type";
 
 export interface LostCitiesRivalsState {
   players: PlayerI[];
@@ -17,18 +8,11 @@ export interface LostCitiesRivalsState {
 
 const initPlayer = (name: string): PlayerI => ({
   name,
-  stacks: [
-    {
-      multipliers: 1,
-      singlePointers: 0,
-      doublePointers: 0,
-    },
-    {
-      multipliers: 1,
-      singlePointers: 0,
-      doublePointers: 0,
-    },
-  ],
+  stacks: new Array(2).fill({
+    multipliers: 1,
+    singlePointers: 0,
+    doublePointers: 0,
+  }),
 });
 
 const initialState: LostCitiesRivalsState = {

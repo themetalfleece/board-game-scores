@@ -1,5 +1,5 @@
 import { Typography, Stack } from "@mui/material";
-import { GameChooseButton } from "../gameChooseButton/GameChooseButton.component";
+import { GameChooseButton } from "./GameChooseButton.component";
 import { gameRoutes } from "../routedGames/gameRoutes";
 
 export const GamePicker: React.FC<{}> = () => {

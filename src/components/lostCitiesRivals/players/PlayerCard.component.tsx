@@ -2,6 +2,7 @@ import { Paper, Stack, Typography } from "@mui/material";
 import { StackContent } from "../stacks/StackContent.component";
 import { PlayerI } from "./player.type";
 import { PlayerDeleteButton } from "./PlayerDeleteButton.component";
+import { PlayerScore } from "./PlayerScore.component";
 
 export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
   return (
@@ -11,6 +12,8 @@ export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
           <Typography variant="h6">{player.name}</Typography>
           <PlayerDeleteButton playerId={player.id} />
         </Stack>
+
+        <PlayerScore player={player} />
 
         {player.stacks.map((stack, index) => (
           <StackContent

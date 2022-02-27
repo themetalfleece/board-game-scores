@@ -10,9 +10,10 @@ export interface LostCitiesRivalsState {
 const initPlayer = (name: string): PlayerI => ({
   id: uuid.v4(),
   name,
-  stacks: new Array(2).fill(undefined).map(() => ({
+  stacks: new Array(5).fill(undefined).map((_, index) => ({
     id: uuid.v4(),
-    multipliers: 1,
+    // first 2 stacks have a multiplier, the rest have none
+    multipliers: index <= 1 ? 1 : 0,
     singlePointers: 0,
     doublePointers: 0,
   })),

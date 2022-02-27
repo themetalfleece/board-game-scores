@@ -29,7 +29,7 @@ export const lostCitiesRivalsSlice = createSlice({
     addPlayer: (state, action: PayloadAction<string>) => {
       state.players.push(initPlayer(action.payload));
     },
-    changePlayerStacks: (
+    setPlayerStack: (
       state,
       action: PayloadAction<{
         playerId: PlayerI["id"];
@@ -54,6 +54,6 @@ export const lostCitiesRivalsSlice = createSlice({
   },
 });
 
-export const { addPlayer, changePlayerStacks } = lostCitiesRivalsSlice.actions;
+export const { addPlayer, setPlayerStack } = lostCitiesRivalsSlice.actions;
 
 export const { reducer } = lostCitiesRivalsSlice;

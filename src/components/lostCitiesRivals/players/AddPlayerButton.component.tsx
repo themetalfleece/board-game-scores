@@ -9,6 +9,7 @@ export const AddPlayerButton: React.FC<{}> = () => {
 
   return (
     <Button
+      variant="contained"
       onClick={() => dispatch(addPlayer(`Player ${store.players.length + 1}`))}
     >
       Add player

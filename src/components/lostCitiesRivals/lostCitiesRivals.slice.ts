@@ -55,10 +55,11 @@ export const lostCitiesRivalsSlice = createSlice({
 
       player.stacks[stackIndex] = stack;
     },
+    reset: () => initialState,
   },
 });
 
-export const { addPlayer, deletePlayer, setPlayerStack } =
+export const { addPlayer, deletePlayer, setPlayerStack, reset } =
   lostCitiesRivalsSlice.actions;
 
 export const { reducer } = lostCitiesRivalsSlice;

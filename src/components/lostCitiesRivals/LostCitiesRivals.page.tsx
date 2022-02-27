@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import { NewGameButton } from "./game/NewGameButton.component";
 import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
 import { useSelector } from "./useSelector.hook";
@@ -17,6 +18,7 @@ export const LostCitiesRivals: React.FC<{}> = () => {
       ))}
 
       <AddPlayerButton />
+      <NewGameButton />
     </Stack>
   );
 };

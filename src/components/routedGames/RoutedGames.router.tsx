@@ -11,7 +11,7 @@ export const RoutedGames: React.FC<{}> = () => {
         path={gameRoutes.lostCitiesRivals}
         element={<LostCitiesRivals />}
       />
-      <Route index element={<GamePicker />} />
+      <Route element={<GamePicker />} />
     </Routes>
   );
 };

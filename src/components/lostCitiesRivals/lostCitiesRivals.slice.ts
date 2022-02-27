@@ -1,18 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PlayerI } from "./players/player.type";
 import { StackI } from "./stacks/stack.type";
+import * as uuid from "uuid";
 
 export interface LostCitiesRivalsState {
   players: PlayerI[];
 }
 
 const initPlayer = (name: string): PlayerI => ({
+  id: uuid.v4(),
   name,
-  stacks: new Array(2).fill({
+  stacks: new Array(2).fill(undefined).map(() => ({
+    id: uuid.v4(),
     multipliers: 1,
     singlePointers: 0,
     doublePointers: 0,
-  }),
+  })),
 });
 
 const initialState: LostCitiesRivalsState = {
@@ -29,13 +32,24 @@ export const lostCitiesRivalsSlice = createSlice({
     changePlayerStacks: (
       state,
       action: PayloadAction<{
-        playerIndex: number;
-        stackIndex: number;
+        playerId: PlayerI["id"];
+        stackId: PlayerI["id"];
         stack: StackI;
       }>
     ) => {
-      const { playerIndex, stackIndex, stack } = action.payload;
-      state.players[playerIndex].stacks[stackIndex] = stack;
+      const { playerId, stackId, stack } = action.payload;
+
+      const player = state.players.find(({ id }) => id === playerId);
+      if (!player) {
+        return;
+      }
+
+      const stackIndex = player?.stacks.findIndex(({ id }) => id === stackId);
+      if (stackIndex === -1) {
+        return;
+      }
+
+      player.stacks[stackIndex] = stack;
     },
   },
 });

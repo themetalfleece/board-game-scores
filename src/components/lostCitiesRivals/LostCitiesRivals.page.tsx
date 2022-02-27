@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { HomeButton } from "../home/HomeButton.component";
 import { NewGameButton } from "./game/NewGameButton.component";
 import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
@@ -20,8 +21,11 @@ export const LostCitiesRivals: React.FC<{}> = () => {
         ))}
       </Box>
 
-      <AddPlayerButton />
-      <NewGameButton />
+      <Stack direction="column" spacing={1}>
+        <AddPlayerButton />
+        <NewGameButton />
+        <HomeButton />
+      </Stack>
     </Stack>
   );
 };

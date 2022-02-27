@@ -1,22 +1,37 @@
 import { RootState } from "./store";
 
+const latestStateVersion = "1";
+const stateKey = "state";
+const stateVersionKey = "stateVersion";
+
 export const loadState = () => {
   try {
-    const serializedState = localStorage.getItem("state");
-    if (serializedState === null) {
-      return undefined;
+    const stateVersion = localStorage.getItem(stateVersionKey);
+
+    if (stateVersion !== latestStateVersion) {
+      localStorage.removeItem(stateKey);
+      localStorage.removeItem(stateVersionKey);
+      return;
     }
+
+    const serializedState = localStorage.getItem(stateKey);
+
+    if (serializedState === null) {
+      return;
+    }
+
     return JSON.parse(serializedState);
   } catch (err) {
     console.error(err);
-    return undefined;
+    return;
   }
 };
 
 export const saveState = (state: RootState) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem("state", serializedState);
+    localStorage.setItem(stateKey, serializedState);
+    localStorage.setItem(stateVersionKey, latestStateVersion);
   } catch (err) {
     console.error(err);
   }

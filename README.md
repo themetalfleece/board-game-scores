@@ -1,5 +1,7 @@
 # Board game scores
 
+# [Application link](https://themetalfleece.github.io/board-game-scores/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import { NewGameButton } from "./game/NewGameButton.component";
 import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
@@ -13,9 +14,11 @@ export const LostCitiesRivals: React.FC<{}> = () => {
     <Stack alignItems="center" spacing={2}>
       <Typography variant="h5">Lost Cities Rivals</Typography>
 
-      {players.map((player) => (
-        <PlayerCard player={player} key={player.id} />
-      ))}
+      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={2}>
+        {players.map((player) => (
+          <PlayerCard player={player} key={player.id} />
+        ))}
+      </Box>
 
       <AddPlayerButton />
       <NewGameButton />

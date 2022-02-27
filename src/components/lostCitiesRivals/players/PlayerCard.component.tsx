@@ -6,12 +6,9 @@ import { PlayerScore } from "./PlayerScore.component";
 
 export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
   return (
-    <Paper sx={{ p: 1 }}>
+    <Paper sx={{ p: 1, minWidth: "300px" }}>
       <Stack spacing={1} alignItems="center">
-        <Stack direction="row" alignItems="center">
-          <Typography variant="h6">{player.name}</Typography>
-          <PlayerDeleteButton playerId={player.id} />
-        </Stack>
+        <Typography variant="h6">{player.name}</Typography>
 
         <PlayerScore player={player} />
 
@@ -23,6 +20,8 @@ export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
             key={stack.id}
           />
         ))}
+
+        <PlayerDeleteButton playerId={player.id} />
       </Stack>
     </Paper>
   );

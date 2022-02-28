@@ -122,13 +122,13 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       <Stack gap={1} width="100%">
         <FormControl fullWidth>
           <InputLabel id="completed-ticket-points-label">
-            Completed Ticket Points
+            Points of Completed Tickets
           </InputLabel>
           <Select
             fullWidth
             value={0}
             labelId="completed-ticket-points-label"
-            label="Completed Ticket Points"
+            label="Points of Completed Tickets"
             onChange={(e) =>
               pushArrayValue(+e.target.value, "completedTicketPoints")
             }
@@ -170,13 +170,13 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       <Stack gap={1} width="100%">
         <FormControl fullWidth>
           <InputLabel id="uncompleted-ticket-points-label">
-            Uncompleted Ticket Points
+            Points of Uncompleted Tickets
           </InputLabel>
           <Select
             fullWidth
             value={0}
             labelId="uncompleted-ticket-points-label"
-            label="Uncompleted Ticket Points"
+            label="Points of Uncompleted Tickets"
             onChange={(e) =>
               pushArrayValue(+e.target.value, "uncompletedTicketPoints")
             }

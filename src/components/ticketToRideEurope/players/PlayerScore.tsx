@@ -10,7 +10,7 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
 
   const { players } = state;
 
-  const longestPathLength = Math.max(
+  const longestPathLengthOfAllPlayers = Math.max(
     ...players.map((p) => p.inGameState.longestPathLength)
   );
 
@@ -35,12 +35,12 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
       0
     );
 
-    if (inGameState.longestPathLength === longestPathLength) {
+    if (inGameState.longestPathLength === longestPathLengthOfAllPlayers) {
       score += 10;
     }
 
     return score;
-  }, [inGameState, longestPathLength]);
+  }, [inGameState, longestPathLengthOfAllPlayers]);
 
   return <Typography variant="h6">Score: {score}</Typography>;
 };

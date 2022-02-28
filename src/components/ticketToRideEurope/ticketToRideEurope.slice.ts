@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PlayerI } from "./players/player.type";
 import * as uuid from "uuid";
+import { PlayerInGameState } from "./players/playerInGameState.type";
 
 export interface TicketToRideEuropeState {
   players: PlayerI[];
@@ -9,17 +10,19 @@ export interface TicketToRideEuropeState {
 const initPlayer = (name: string): PlayerI => ({
   id: uuid.v4(),
   name,
-  biggestRouteLength: 0,
-  oneWagonRoutes: 0,
-  twoWagonRoutes: 0,
-  threeWagonRoutes: 0,
-  fourWagonRoutes: 0,
-  fiveWagonRoutes: 0,
-  sixWagonRoutes: 0,
-  eightWagonRoutes: 0,
-  completedTicketPoints: [],
-  uncompletedTicketPoints: [],
-  stationsKept: 3,
+  inGameState: {
+    biggestRouteLength: 0,
+    oneWagonRoutes: 0,
+    twoWagonRoutes: 0,
+    threeWagonRoutes: 0,
+    fourWagonRoutes: 0,
+    fiveWagonRoutes: 0,
+    sixWagonRoutes: 0,
+    eightWagonRoutes: 0,
+    completedTicketPoints: [],
+    uncompletedTicketPoints: [],
+    stationsKept: 3,
+  },
 });
 
 const initialState: TicketToRideEuropeState = {
@@ -40,34 +43,17 @@ export const ticketToRideEuropeSlice = createSlice({
       state,
       action: PayloadAction<{
         playerId: string;
-        data: Pick<
-          PlayerI,
-          | "biggestRouteLength"
-          | "oneWagonRoutes"
-          | "twoWagonRoutes"
-          | "threeWagonRoutes"
-          | "fourWagonRoutes"
-          | "fiveWagonRoutes"
-          | "sixWagonRoutes"
-          | "eightWagonRoutes"
-          | "completedTicketPoints"
-          | "uncompletedTicketPoints"
-          | "stationsKept"
-        >;
+        data: PlayerInGameState;
       }>
     ) => {
       const { playerId, data } = action.payload;
 
-      const playerIndex = state.players.findIndex(({ id }) => id === playerId);
-      if (playerIndex === -1) {
+      const player = state.players.find(({ id }) => id === playerId);
+      if (!player) {
         return;
       }
 
-      const player = state.players[playerIndex];
-      state.players[playerIndex] = {
-        ...player,
-        ...data,
-      };
+      player.inGameState = data;
     },
     reset: () => initialState,
   },

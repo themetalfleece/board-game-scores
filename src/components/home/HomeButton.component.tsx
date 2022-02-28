@@ -1,8 +1,14 @@
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 export const HomeButton: React.FC<{}> = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
 
-  return <Button onClick={() => navigate("/")}>Home</Button>;
+  return (
+    <Button onClick={() => navigate("/", { replace: true, state: [] })}>
+      Home
+    </Button>
+  );
 };

@@ -1,6 +1,7 @@
 import { Typography, Stack } from "@mui/material";
 import { GameChooseButton } from "./GameChooseButton.component";
 import { gameRoutes } from "../routedGames/gameRoutes";
+import { InstallationInfo } from "../info/InstallationInfo.component";
 
 export const GamePicker: React.FC<{}> = () => {
   return (
@@ -10,6 +11,8 @@ export const GamePicker: React.FC<{}> = () => {
       <GameChooseButton gamePath={gameRoutes.lostCitiesRivals}>
         Lost Cities Rivals
       </GameChooseButton>
+
+      <InstallationInfo />
     </Stack>
   );
 };

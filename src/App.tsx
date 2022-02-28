@@ -4,7 +4,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Box } from "@mui/material";
-import { InstallationInfo } from "./components/info/InstallationInfo.component";
 import { RoutedGames } from "./components/routedGames/RoutedGames.router";
 import { theme } from "./theme/theme";
 
@@ -14,8 +13,6 @@ function App() {
       <CssBaseline>
         <Box m={2}>
           <RoutedGames />
-
-          <InstallationInfo />
         </Box>
       </CssBaseline>
     </ThemeProvider>

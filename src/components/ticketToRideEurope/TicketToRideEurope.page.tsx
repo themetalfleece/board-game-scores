@@ -5,14 +5,14 @@ import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
 import { useSelector } from "./useSelector.hook";
 
-export const LostCitiesRivals: React.FC<{}> = () => {
+export const TicketToRideEurope: React.FC<{}> = () => {
   const state = useSelector();
 
   const { players } = state;
 
   return (
     <Stack alignItems="center" spacing={2}>
-      <Typography variant="h5">Lost Cities Rivals</Typography>
+      <Typography variant="h5">Ticket to Ride Europe</Typography>
 
       <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2}>
         {players.map((player) => (

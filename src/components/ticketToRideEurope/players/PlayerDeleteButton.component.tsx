@@ -2,7 +2,7 @@ import { IconButton } from "@mui/material";
 import { PlayerI } from "../players/player.type";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useAppDispatch } from "../../../store/useAppDispatch.hook";
-import { deletePlayer } from "../lostCitiesRivals.slice";
+import { deletePlayer } from "../ticketToRideEurope.slice";
 import { useState } from "react";
 
 export const PlayerDeleteButton: React.FC<{ playerId: PlayerI["id"] }> = ({

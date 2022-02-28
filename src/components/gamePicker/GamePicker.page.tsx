@@ -12,6 +12,10 @@ export const GamePicker: React.FC<{}> = () => {
         Lost Cities Rivals
       </GameChooseButton>
 
+      <GameChooseButton gamePath={gameRoutes.ticketToRideEurope}>
+        Ticket to Ride Europe
+      </GameChooseButton>
+
       <InstallationInfo />
     </Stack>
   );

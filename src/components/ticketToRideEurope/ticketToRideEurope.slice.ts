@@ -16,7 +16,6 @@ const initPlayer = (name: string): PlayerI => ({
     twoWagonRoutes: 0,
     threeWagonRoutes: 0,
     fourWagonRoutes: 0,
-    fiveWagonRoutes: 0,
     sixWagonRoutes: 0,
     eightWagonRoutes: 0,
     completedTicketPoints: [],

@@ -3,7 +3,6 @@ export interface PlayerInGameState {
   twoWagonRoutes: number;
   threeWagonRoutes: number;
   fourWagonRoutes: number;
-  fiveWagonRoutes: number;
   sixWagonRoutes: number;
   eightWagonRoutes: number;
   stationsKept: number;

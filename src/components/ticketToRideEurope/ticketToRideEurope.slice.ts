@@ -11,16 +11,16 @@ const initPlayer = (name: string): PlayerI => ({
   id: uuid.v4(),
   name,
   inGameState: {
-    biggestRouteLength: 0,
     oneWagonRoutes: 0,
     twoWagonRoutes: 0,
     threeWagonRoutes: 0,
     fourWagonRoutes: 0,
     sixWagonRoutes: 0,
     eightWagonRoutes: 0,
+    stationsKept: 3,
+    biggestRouteLength: 0,
     completedTicketPoints: [],
     uncompletedTicketPoints: [],
-    stationsKept: 3,
   },
 });
 

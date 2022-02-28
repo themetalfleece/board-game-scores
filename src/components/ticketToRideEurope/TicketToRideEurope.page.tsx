@@ -1,4 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { HomeButton } from "../home/HomeButton.component";
+import { NewGameButton } from "./game/NewGameButton.component";
+import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
 import { useSelector } from "./useSelector.hook";
 
@@ -16,6 +19,12 @@ export const TicketToRideEurope: React.FC<{}> = () => {
           <PlayerCard player={player} key={player.id} />
         ))}
       </Box>
+
+      <Stack direction="column" spacing={1}>
+        <AddPlayerButton />
+        <NewGameButton />
+        <HomeButton />
+      </Stack>
     </Stack>
   );
 };

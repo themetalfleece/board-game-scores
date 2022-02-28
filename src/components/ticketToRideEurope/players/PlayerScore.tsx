@@ -11,7 +11,7 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
   const { players } = state;
 
   const longestPathLength = Math.max(
-    ...players.map((p) => p.inGameState.biggestRouteLength)
+    ...players.map((p) => p.inGameState.longestPathLength)
   );
 
   const score = useMemo(() => {
@@ -35,7 +35,7 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
       0
     );
 
-    if (inGameState.biggestRouteLength === longestPathLength) {
+    if (inGameState.longestPathLength === longestPathLength) {
       score += 10;
     }
 

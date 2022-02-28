@@ -113,9 +113,9 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       />
 
       <NumericTextField
-        label="Biggest Route Length"
-        value={inGameState.biggestRouteLength}
-        onChange={(e) => handleNumericChange(e, "biggestRouteLength")}
+        label="Longest Path Length"
+        value={inGameState.longestPathLength}
+        onChange={(e) => handleNumericChange(e, "longestPathLength")}
         sx={{ width: "100%" }}
       />
 

@@ -6,7 +6,7 @@ export interface PlayerInGameState {
   sixWagonRoutes: number;
   eightWagonRoutes: number;
   stationsKept: number;
-  biggestRouteLength: number;
+  longestPathLength: number;
   completedTicketPoints: number[];
   uncompletedTicketPoints: number[];
 }

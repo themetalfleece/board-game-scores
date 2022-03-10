@@ -4,7 +4,8 @@
 
 ## Supported Board Games
 
-- ### Lost Cities Rivals
+- ### [Lost Cities Rivals](https://themetalfleece.github.io/board-game-scores/#/lost-cities-rivals)
+- ### [Ticket to Ride Europe](https://themetalfleece.github.io/board-game-scores/#/ticket-to-ride-europe)
 
 ### Development
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

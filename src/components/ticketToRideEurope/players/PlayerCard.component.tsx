@@ -2,7 +2,7 @@ import { Paper, Stack, Typography } from "@mui/material";
 import { PlayerI } from "./player.type";
 import { PlayerContols } from "./PlayerControls.component";
 import { PlayerDeleteButton } from "./PlayerDeleteButton.component";
-import { PlayerScore } from "./PlayerScore";
+import { PlayerScore } from "./PlayerScore.component";
 
 export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
   return (

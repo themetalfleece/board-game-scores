@@ -16,6 +16,8 @@ export const GamePicker: React.FC<{}> = () => {
         Ticket to Ride Europe
       </GameChooseButton>
 
+      <GameChooseButton gamePath={gameRoutes.ohanami}>Ohanami</GameChooseButton>
+
       <InstallationInfo />
     </Stack>
   );

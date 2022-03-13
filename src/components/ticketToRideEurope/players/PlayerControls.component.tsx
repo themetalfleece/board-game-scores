@@ -19,7 +19,7 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
 
   const { inGameState, id: playerId } = player;
 
-  const changeStackValue = (
+  const changeSingleValue = (
     value: number | number[],
     field: PlayerInGameStateFields
   ) => {
@@ -41,7 +41,7 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       "completedTicketPoints" | "uncompletedTicketPoints"
     >
   ) => {
-    return changeStackValue([...inGameState[field], value], field);
+    return changeSingleValue([...inGameState[field], value], field);
   };
 
   const removeArrayValueByIndex = (
@@ -53,13 +53,13 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
   ) => {
     const newArr = [...inGameState[field]];
     newArr.splice(index, 1);
-    return changeStackValue(newArr, field);
+    return changeSingleValue(newArr, field);
   };
 
   const handleNumericChange = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
     field: PlayerInGameStateFields
-  ) => changeStackValue(+event.target.value, field);
+  ) => changeSingleValue(+event.target.value, field);
 
   return (
     <Stack alignItems="center" spacing={2}>

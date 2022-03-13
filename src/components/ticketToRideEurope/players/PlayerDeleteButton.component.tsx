@@ -1,32 +1,16 @@
-import { IconButton } from "@mui/material";
 import { PlayerI } from "../players/player.type";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useAppDispatch } from "../../../store/useAppDispatch.hook";
 import { deletePlayer } from "../ticketToRideEurope.slice";
-import { useState } from "react";
+import { DeleteIconButton } from "../../lib/DeleteIconButton.component";
 
 export const PlayerDeleteButton: React.FC<{ playerId: PlayerI["id"] }> = ({
   playerId,
 }) => {
   const dispatch = useAppDispatch();
 
-  const [deletePending, setDeletePending] = useState(false);
-
-  const handleDelete = () => {
-    if (deletePending) {
-      dispatch(deletePlayer(playerId));
-    } else {
-      setDeletePending(true);
-    }
+  const onDelete = () => {
+    dispatch(deletePlayer(playerId));
   };
 
-  return (
-    <IconButton
-      color={deletePending ? "error" : "default"}
-      onClick={handleDelete}
-      onBlur={() => setDeletePending(false)}
-    >
-      <DeleteIcon />
-    </IconButton>
-  );
+  return <DeleteIconButton onDelete={onDelete} />;
 };

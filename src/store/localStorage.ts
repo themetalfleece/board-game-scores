@@ -1,6 +1,6 @@
 import { RootState } from "./store";
 
-const latestStateVersion = "1";
+const latestStateVersion = "2";
 const stateKey = "state";
 const stateVersionKey = "stateVersion";
 

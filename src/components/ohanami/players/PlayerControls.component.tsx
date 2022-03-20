@@ -27,10 +27,10 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
     );
   };
 
-  const handleNumericChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-    field: PlayerInGameStateFields
-  ) => changeSingleValue(+event.target.value, field);
+  const handleNumericChange =
+    (field: PlayerInGameStateFields) =>
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
+      changeSingleValue(+event.target.value, field);
 
   return (
     <Stack alignItems="center" spacing={2}>
@@ -41,7 +41,7 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       <NumericTextField
         label="Round One Blue"
         value={inGameState.roundOneBlue}
-        onChange={(e) => handleNumericChange(e, "roundOneBlue")}
+        onChange={handleNumericChange("roundOneBlue")}
         sx={{ width: "100%" }}
       />
 
@@ -52,14 +52,14 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       <NumericTextField
         label="Round Two Blue"
         value={inGameState.roundTwoBlue}
-        onChange={(e) => handleNumericChange(e, "roundTwoBlue")}
+        onChange={handleNumericChange("roundTwoBlue")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Round Two Green"
         value={inGameState.roundTwoGreen}
-        onChange={(e) => handleNumericChange(e, "roundTwoGreen")}
+        onChange={handleNumericChange("roundTwoGreen")}
         sx={{ width: "100%" }}
       />
 
@@ -70,28 +70,28 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
       <NumericTextField
         label="Round Three Blue"
         value={inGameState.roundThreeBlue}
-        onChange={(e) => handleNumericChange(e, "roundThreeBlue")}
+        onChange={handleNumericChange("roundThreeBlue")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Round Three Green"
         value={inGameState.roundThreeGreen}
-        onChange={(e) => handleNumericChange(e, "roundThreeGreen")}
+        onChange={handleNumericChange("roundThreeGreen")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Round Three Grey"
         value={inGameState.roundThreeGrey}
-        onChange={(e) => handleNumericChange(e, "roundThreeGrey")}
+        onChange={handleNumericChange("roundThreeGrey")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Round Three Pink"
         value={inGameState.roundThreePink}
-        onChange={(e) => handleNumericChange(e, "roundThreePink")}
+        onChange={handleNumericChange("roundThreePink")}
         sx={{ width: "100%" }}
       />
     </Stack>

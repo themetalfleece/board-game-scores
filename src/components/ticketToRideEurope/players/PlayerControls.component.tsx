@@ -56,66 +56,66 @@ export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
     return changeSingleValue(newArr, field);
   };
 
-  const handleNumericChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-    field: PlayerInGameStateFields
-  ) => changeSingleValue(+event.target.value, field);
+  const handleNumericChange =
+    (field: PlayerInGameStateFields) =>
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
+      changeSingleValue(+event.target.value, field);
 
   return (
     <Stack alignItems="center" spacing={2}>
       <NumericTextField
         label="One Wagon Routes"
         value={inGameState.oneWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "oneWagonRoutes")}
+        onChange={handleNumericChange("oneWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Two Wagon Routes"
         value={inGameState.twoWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "twoWagonRoutes")}
+        onChange={handleNumericChange("twoWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Three Wagon Routes"
         value={inGameState.threeWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "threeWagonRoutes")}
+        onChange={handleNumericChange("threeWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Four Wagon Routes"
         value={inGameState.fourWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "fourWagonRoutes")}
+        onChange={handleNumericChange("fourWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Six Wagon Routes"
         value={inGameState.sixWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "sixWagonRoutes")}
+        onChange={handleNumericChange("sixWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Eight Wagon Routes"
         value={inGameState.eightWagonRoutes}
-        onChange={(e) => handleNumericChange(e, "eightWagonRoutes")}
+        onChange={handleNumericChange("eightWagonRoutes")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Stations Kept"
         value={inGameState.stationsKept}
-        onChange={(e) => handleNumericChange(e, "stationsKept")}
+        onChange={handleNumericChange("stationsKept")}
         sx={{ width: "100%" }}
       />
 
       <NumericTextField
         label="Longest Path Length"
         value={inGameState.longestPathLength}
-        onChange={(e) => handleNumericChange(e, "longestPathLength")}
+        onChange={handleNumericChange("longestPathLength")}
         sx={{ width: "100%" }}
       />
 

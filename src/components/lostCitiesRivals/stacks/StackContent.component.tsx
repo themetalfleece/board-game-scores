@@ -30,10 +30,10 @@ export const StackContent: React.FC<{
     );
   };
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-    field: StackDataFields
-  ) => changeStackValue(+event.target.value, field);
+  const handleChange =
+    (field: StackDataFields) =>
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
+      changeStackValue(+event.target.value, field);
 
   return (
     <Stack alignItems="center" spacing={1}>
@@ -42,19 +42,19 @@ export const StackContent: React.FC<{
       <NumericTextField
         label="Multipliers"
         value={stack.multipliers}
-        onChange={(e) => handleChange(e, "multipliers")}
+        onChange={handleChange("multipliers")}
       />
 
       <NumericTextField
         label="Single Pointers"
         value={stack.singlePointers}
-        onChange={(e) => handleChange(e, "singlePointers")}
+        onChange={handleChange("singlePointers")}
       />
 
       <NumericTextField
         label="Double Pointers"
         value={stack.doublePointers}
-        onChange={(e) => handleChange(e, "doublePointers")}
+        onChange={handleChange("doublePointers")}
       />
     </Stack>
   );

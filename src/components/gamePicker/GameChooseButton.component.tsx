@@ -8,7 +8,11 @@ export const GameChooseButton: React.FC<{ gamePath: string }> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <Button variant="contained" onClick={() => navigate(gamePath)}>
+    <Button
+      sx={{ width: "100%" }}
+      variant="contained"
+      onClick={() => navigate(gamePath)}
+    >
       {children}
     </Button>
   );

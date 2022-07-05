@@ -8,15 +8,19 @@ export const GamePicker: React.FC<{}> = () => {
     <Stack alignItems="center" sx={{ gap: (theme) => theme.spacing(1) }}>
       <Typography variant="h4">Choose your game</Typography>
 
-      <GameChooseButton gamePath={gameRoutes.lostCitiesRivals}>
-        Lost Cities Rivals
-      </GameChooseButton>
+      <Stack alignItems="center" sx={{ gap: (theme) => theme.spacing(1) }}>
+        <GameChooseButton gamePath={gameRoutes.lostCitiesRivals}>
+          Lost Cities Rivals
+        </GameChooseButton>
 
-      <GameChooseButton gamePath={gameRoutes.ticketToRideEurope}>
-        Ticket to Ride Europe
-      </GameChooseButton>
+        <GameChooseButton gamePath={gameRoutes.ticketToRideEurope}>
+          Ticket to Ride Europe
+        </GameChooseButton>
 
-      <GameChooseButton gamePath={gameRoutes.ohanami}>Ohanami</GameChooseButton>
+        <GameChooseButton gamePath={gameRoutes.ohanami}>
+          Ohanami
+        </GameChooseButton>
+      </Stack>
 
       <InstallationInfo />
     </Stack>

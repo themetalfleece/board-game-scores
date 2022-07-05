@@ -1,16 +1,34 @@
 import { Paper, Stack, Typography } from "@mui/material";
+import { useAppDispatch } from "../../../store/useAppDispatch.hook";
+import { NumericTextField } from "../../lib/NumericTextField.component";
+import { setPlayerCoins } from "../lostCitiesRivals.slice";
 import { StackContent } from "../stacks/StackContent.component";
 import { PlayerI } from "./player.type";
 import { PlayerDeleteButton } from "./PlayerDeleteButton.component";
 import { PlayerScore } from "./PlayerScore.component";
 
 export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <Paper sx={{ p: 1, minWidth: "300px" }}>
-      <Stack spacing={1} alignItems="center">
+      <Stack spacing={2} alignItems="center">
         <Typography variant="h6">{player.name}</Typography>
 
         <PlayerScore player={player} />
+
+        <NumericTextField
+          label="Coins"
+          value={player.coins}
+          onChange={(event) =>
+            dispatch(
+              setPlayerCoins({
+                playerId: player.id,
+                coins: +event.target.value,
+              })
+            )
+          }
+        />
 
         {player.stacks.map((stack, index) => (
           <StackContent

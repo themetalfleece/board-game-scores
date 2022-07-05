@@ -10,12 +10,14 @@ export interface LostCitiesRivalsState {
 const initPlayer = (name: string): PlayerI => ({
   id: uuid.v4(),
   name,
+  coins: 0,
   stacks: new Array(5).fill(undefined).map((_, index) => ({
     id: uuid.v4(),
     // first 2 stacks have a multiplier, the rest have none
     multipliers: index <= 1 ? 1 : 0,
     singlePointers: 0,
     doublePointers: 0,
+    hasFourOrMoreNumberCards: false,
   })),
 });
 
@@ -32,6 +34,19 @@ export const lostCitiesRivalsSlice = createSlice({
     },
     deletePlayer: (state, action: PayloadAction<string>) => {
       state.players = state.players.filter(({ id }) => id !== action.payload);
+    },
+    setPlayerCoins: (
+      state,
+      action: PayloadAction<{ playerId: string; coins: PlayerI["coins"] }>
+    ) => {
+      const { coins, playerId } = action.payload;
+
+      const player = state.players.find(({ id }) => id === playerId);
+      if (!player) {
+        return;
+      }
+
+      player.coins = coins;
     },
     setPlayerStack: (
       state,
@@ -59,7 +74,12 @@ export const lostCitiesRivalsSlice = createSlice({
   },
 });
 
-export const { addPlayer, deletePlayer, setPlayerStack, reset } =
-  lostCitiesRivalsSlice.actions;
+export const {
+  addPlayer,
+  deletePlayer,
+  setPlayerStack,
+  setPlayerCoins,
+  reset,
+} = lostCitiesRivalsSlice.actions;
 
 export const { reducer } = lostCitiesRivalsSlice;

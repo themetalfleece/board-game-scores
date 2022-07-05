@@ -19,9 +19,7 @@ const initRound = (): RoundI => ({
 const initPlayer = (name: string): PlayerI => ({
   id: uuid.v4(),
   name,
-  round1: initRound(),
-  round2: initRound(),
-  round3: initRound(),
+  rounds: [initRound(), initRound(), initRound()],
 });
 
 const initialState: SushiGoState = {
@@ -43,17 +41,17 @@ export const sushiGoSlice = createSlice({
       action: PayloadAction<{
         playerId: string;
         data: RoundI;
-        roundKey: "round1" | "round2" | "round3";
+        roundIndex: 0 | 1 | 2;
       }>
     ) => {
-      const { playerId, data, roundKey } = action.payload;
+      const { playerId, data, roundIndex } = action.payload;
 
       const player = state.players.find(({ id }) => id === playerId);
       if (!player) {
         return;
       }
 
-      player[roundKey] = data;
+      player.rounds[roundIndex] = data;
     },
     reset: () => initialState,
   },

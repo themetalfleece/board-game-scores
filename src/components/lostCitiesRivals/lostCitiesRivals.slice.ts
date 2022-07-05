@@ -17,7 +17,6 @@ const initPlayer = (name: string): PlayerI => ({
     multipliers: index <= 1 ? 1 : 0,
     singlePointers: 0,
     doublePointers: 0,
-    hasFourOrMoreNumberCards: false,
   })),
 });
 

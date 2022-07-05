@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { useAppDispatch } from "../../../store/useAppDispatch.hook";
 import { NumericTextField } from "../../lib/NumericTextField.component";
 import { setPlayerStack } from "../lostCitiesRivals.slice";
@@ -7,10 +7,7 @@ import { StackI } from "./stack.type";
 
 type StackDataFields = keyof Pick<
   StackI,
-  | "multipliers"
-  | "singlePointers"
-  | "doublePointers"
-  | "hasFourOrMoreNumberCards"
+  "multipliers" | "singlePointers" | "doublePointers"
 >;
 
 export const StackContent: React.FC<{
@@ -61,22 +58,6 @@ export const StackContent: React.FC<{
         label="Double Pointers"
         value={stack.doublePointers}
         onChange={handleChange("doublePointers")}
-      />
-
-      <FormControlLabel
-        sx={{ maxWidth: "196px" }}
-        control={
-          <Checkbox
-            checked={stack.hasFourOrMoreNumberCards}
-            onClick={() =>
-              changeStackValue(
-                !stack.hasFourOrMoreNumberCards,
-                "hasFourOrMoreNumberCards"
-              )
-            }
-          />
-        }
-        label="Has four or more number cards?"
       />
     </Stack>
   );

@@ -6,5 +6,4 @@ export interface PlayerI {
   round1: RoundI;
   round2: RoundI;
   round3: RoundI;
-  puddings: number;
 }

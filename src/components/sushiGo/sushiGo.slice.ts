@@ -13,6 +13,7 @@ const initRound = (): RoundI => ({
   nigiriAndWasabi: [],
   sashimis: 0,
   tempuras: 0,
+  puddings: 0,
 });
 
 const initPlayer = (name: string): PlayerI => ({
@@ -21,7 +22,6 @@ const initPlayer = (name: string): PlayerI => ({
   round1: initRound(),
   round2: initRound(),
   round3: initRound(),
-  puddings: 0,
 });
 
 const initialState: SushiGoState = {
@@ -55,32 +55,11 @@ export const sushiGoSlice = createSlice({
 
       player[roundKey] = data;
     },
-    setPlayerPuddings: (
-      state,
-      action: PayloadAction<{
-        playerId: string;
-        puddings: number;
-      }>
-    ) => {
-      const { playerId, puddings } = action.payload;
-
-      const player = state.players.find(({ id }) => id === playerId);
-      if (!player) {
-        return;
-      }
-
-      player.puddings = puddings;
-    },
     reset: () => initialState,
   },
 });
 
-export const {
-  addPlayer,
-  deletePlayer,
-  setRoundData,
-  setPlayerPuddings,
-  reset,
-} = sushiGoSlice.actions;
+export const { addPlayer, deletePlayer, setRoundData, reset } =
+  sushiGoSlice.actions;
 
 export const { reducer } = sushiGoSlice;

@@ -5,5 +5,6 @@ export interface RoundI {
   tempuras: number;
   sashimis: number;
   dumplings: number;
+  puddings: number;
   nigiriAndWasabi: NigiriAndWasabiI[];
 }

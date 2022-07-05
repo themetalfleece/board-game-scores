@@ -7,7 +7,7 @@ import { StackI } from "./stack.type";
 
 type StackDataFields = keyof Pick<
   StackI,
-  "multipliers" | "singleFootprints" | "doubleFootprints"
+  "wagers" | "singleFootprints" | "doubleFootprints"
 >;
 
 export const StackContent: React.FC<{
@@ -43,9 +43,9 @@ export const StackContent: React.FC<{
       <Typography variant="h6">{name}</Typography>
 
       <NumericTextField
-        label="Multipliers"
-        value={stack.multipliers}
-        onChange={handleChange("multipliers")}
+        label="Wagers (multipliers)"
+        value={stack.wagers}
+        onChange={handleChange("wagers")}
       />
 
       <NumericTextField

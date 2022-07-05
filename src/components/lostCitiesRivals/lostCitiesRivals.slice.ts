@@ -14,7 +14,7 @@ const initPlayer = (name: string): PlayerI => ({
   stacks: new Array(5).fill(undefined).map((_, index) => ({
     id: uuid.v4(),
     // first 2 stacks have a multiplier, the rest have none
-    multipliers: index <= 1 ? 1 : 0,
+    wagers: index <= 1 ? 1 : 0,
     singleFootprints: 0,
     doubleFootprints: 0,
   })),

@@ -9,8 +9,7 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
       player.stacks.reduce((acc, val) => {
         return (
           acc +
-          (val.multipliers + 1) *
-            (val.singleFootprints + val.doubleFootprints * 2) +
+          (val.wagers + 1) * (val.singleFootprints + val.doubleFootprints * 2) +
           (val.singleFootprints + val.doubleFootprints >= 4 ? 8 : 0)
         );
       }, 0),

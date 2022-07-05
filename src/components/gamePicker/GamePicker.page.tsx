@@ -20,6 +20,10 @@ export const GamePicker: React.FC<{}> = () => {
         <GameChooseButton gamePath={gameRoutes.ohanami}>
           Ohanami
         </GameChooseButton>
+
+        <GameChooseButton gamePath={gameRoutes.sushiGo}>
+          Sushi Go
+        </GameChooseButton>
       </Stack>
 
       <InstallationInfo />

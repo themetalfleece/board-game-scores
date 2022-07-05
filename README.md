@@ -7,6 +7,7 @@
 - ### [Lost Cities Rivals](https://themetalfleece.github.io/board-game-scores/#/lost-cities-rivals)
 - ### [Ticket to Ride Europe](https://themetalfleece.github.io/board-game-scores/#/ticket-to-ride-europe)
 - ### [Ohanami](https://themetalfleece.github.io/board-game-scores/#/ohanami)
+- ### [Sushi Go](https://themetalfleece.github.io/board-game-scores/#/sushi-go)
 
 ### Development
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

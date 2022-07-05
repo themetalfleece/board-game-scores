@@ -4,6 +4,7 @@ import { GamePicker } from "../gamePicker/GamePicker.page";
 import { LostCitiesRivals } from "../lostCitiesRivals/LostCitiesRivals.page";
 import { Ohanami } from "../ohanami/Ohanami.page";
 import { TicketToRideEurope } from "../ticketToRideEurope/TicketToRideEurope.page";
+import { SushiGo } from "../sushiGo/SushiGo.page";
 import { gameRoutes } from "./gameRoutes";
 
 export const RoutedGames: React.FC<{}> = () => {
@@ -18,6 +19,7 @@ export const RoutedGames: React.FC<{}> = () => {
         element={<TicketToRideEurope />}
       />
       <Route path={gameRoutes.ohanami} element={<Ohanami />} />
+      <Route path={gameRoutes.sushiGo} element={<SushiGo />} />
       <Route index element={<GamePicker />} />
     </Routes>
   );

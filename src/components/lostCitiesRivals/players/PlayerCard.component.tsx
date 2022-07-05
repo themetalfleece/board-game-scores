@@ -1,6 +1,7 @@
-import { Paper, Stack, Typography } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
 import { useAppDispatch } from "../../../store/useAppDispatch.hook";
 import { NumericTextField } from "../../lib/NumericTextField.component";
+import { PlayerName } from "../../lib/PlayerName.component";
 import { setPlayerCoins } from "../lostCitiesRivals.slice";
 import { StackContent } from "../stacks/StackContent.component";
 import { PlayerI } from "./player.type";
@@ -13,7 +14,7 @@ export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
   return (
     <Paper sx={{ p: 1, minWidth: "300px" }}>
       <Stack spacing={2} alignItems="center">
-        <Typography variant="h6">{player.name}</Typography>
+        <PlayerName>{player.name}</PlayerName>
 
         <PlayerScore player={player} />
 

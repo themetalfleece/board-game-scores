@@ -1,4 +1,5 @@
-import { Paper, Stack, Typography } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
+import { PlayerName } from "../../lib/PlayerName.component";
 import { PlayerI } from "./player.type";
 import { PlayerContols } from "./PlayerControls.component";
 import { PlayerDeleteButton } from "./PlayerDeleteButton.component";
@@ -8,7 +9,7 @@ export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
   return (
     <Paper sx={{ p: 1, width: "300px" }}>
       <Stack spacing={1} alignItems="center">
-        <Typography variant="h6">{player.name}</Typography>
+        <PlayerName>{player.name}</PlayerName>
 
         <PlayerScore player={player} />
 

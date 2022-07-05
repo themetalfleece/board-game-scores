@@ -15,8 +15,8 @@ const initPlayer = (name: string): PlayerI => ({
     id: uuid.v4(),
     // first 2 stacks have a multiplier, the rest have none
     multipliers: index <= 1 ? 1 : 0,
-    singlePointers: 0,
-    doublePointers: 0,
+    singleFootprints: 0,
+    doubleFootprints: 0,
   })),
 });
 

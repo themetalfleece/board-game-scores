@@ -7,7 +7,7 @@ import { StackI } from "./stack.type";
 
 type StackDataFields = keyof Pick<
   StackI,
-  "multipliers" | "singlePointers" | "doublePointers"
+  "multipliers" | "singleFootprints" | "doubleFootprints"
 >;
 
 export const StackContent: React.FC<{
@@ -49,15 +49,15 @@ export const StackContent: React.FC<{
       />
 
       <NumericTextField
-        label="Single Pointers"
-        value={stack.singlePointers}
-        onChange={handleChange("singlePointers")}
+        label="Single Footprints"
+        value={stack.singleFootprints}
+        onChange={handleChange("singleFootprints")}
       />
 
       <NumericTextField
-        label="Double Pointers"
-        value={stack.doublePointers}
-        onChange={handleChange("doublePointers")}
+        label="Double Footprints"
+        value={stack.doubleFootprints}
+        onChange={handleChange("doubleFootprints")}
       />
     </Stack>
   );

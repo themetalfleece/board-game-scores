@@ -10,8 +10,8 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
         return (
           acc +
           (val.multipliers + 1) *
-            (val.singlePointers + val.doublePointers * 2) +
-          (val.singlePointers + val.doublePointers >= 4 ? 8 : 0)
+            (val.singleFootprints + val.doubleFootprints * 2) +
+          (val.singleFootprints + val.doubleFootprints >= 4 ? 8 : 0)
         );
       }, 0),
     [player]

@@ -1,7 +1,7 @@
 import { Paper, Stack } from "@mui/material";
 import { PlayerName } from "../../lib/PlayerName.component";
 import { PlayerI } from "./player.type";
-import { PlayerContols } from "./PlayerControls.component";
+import { PlayerControls } from "./PlayerControls.component";
 import { PlayerDeleteButton } from "./PlayerDeleteButton.component";
 import { PlayerScore } from "./PlayerScore.component";
 
@@ -13,7 +13,7 @@ export const PlayerCard: React.FC<{ player: PlayerI }> = ({ player }) => {
 
         <PlayerScore player={player} />
 
-        <PlayerContols player={player} />
+        <PlayerControls player={player} />
 
         <PlayerDeleteButton playerId={player.id} />
       </Stack>

@@ -7,7 +7,7 @@ import { PlayerInGameState } from "./playerInGameState.type";
 
 type PlayerInGameStateFields = keyof PlayerInGameState;
 
-export const PlayerContols: React.FC<{ player: PlayerI }> = ({ player }) => {
+export const PlayerControls: React.FC<{ player: PlayerI }> = ({ player }) => {
   const dispatch = useAppDispatch();
 
   const { inGameState, id: playerId } = player;

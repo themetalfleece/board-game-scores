@@ -8,6 +8,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import React from "react";
 import { useAppDispatch } from "../../../store/useAppDispatch.hook";
 import { NumericTextField } from "../../lib/NumericTextField.component";
 import { RoundI, RoundIndexesI } from "../rounds/round.type";
@@ -77,10 +78,10 @@ export const PlayerControls: React.FC<{
 
   return (
     <Stack alignItems="center" spacing={2}>
-      <Divider style={{ width: "100%" }} />
-
       {roundIndexes.map((roundIndex) => (
-        <>
+        <React.Fragment key={roundIndex}>
+          <Divider style={{ width: "100%" }} />
+
           <Typography variant="body1">Round {roundIndex + 1}</Typography>
 
           <NumericTextField
@@ -169,7 +170,7 @@ export const PlayerControls: React.FC<{
               ))}
             </Stack>
           </Stack>
-        </>
+        </React.Fragment>
       ))}
     </Stack>
   );

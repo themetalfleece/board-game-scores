@@ -32,22 +32,21 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
   const calculateScoreForPuddings = () => {
     let scoreToReturn = 0;
 
-    const totalPuddingsOfPlayer = (p: PlayerI) =>
-      p.rounds.reduce((acc, round) => acc + round.puddings, 0);
+    const totalPuddingsOfPlayer = ({ rounds }: PlayerI) =>
+      rounds.reduce((acc, round) => acc + round.puddings, 0);
 
     const puddingsOfOtherPlayers = players
-      .filter((p) => p.id !== player.id)
-      .map((p) => totalPuddingsOfPlayer(p));
+      .filter(({ id }) => id !== player.id)
+      .map(totalPuddingsOfPlayer);
 
     const puddingsOfPlayer = totalPuddingsOfPlayer(player);
 
-    const maxPuddings = Math.max(...puddingsOfOtherPlayers, puddingsOfPlayer);
+    const puddingsOfAllPlayers = [...puddingsOfOtherPlayers, puddingsOfPlayer];
+
+    const maxPuddings = Math.max(...puddingsOfAllPlayers);
 
     if (puddingsOfPlayer === maxPuddings) {
-      const totalPlayersWithMaxPuddings = [
-        ...puddingsOfOtherPlayers,
-        puddingsOfPlayer,
-      ].reduce(
+      const totalPlayersWithMaxPuddings = puddingsOfAllPlayers.reduce(
         (acc, puddings) => (puddings === maxPuddings ? acc + 1 : acc),
         0
       );
@@ -56,13 +55,10 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
     }
 
     if (players.length > 2) {
-      const minPuddings = Math.min(...puddingsOfOtherPlayers, puddingsOfPlayer);
+      const minPuddings = Math.min(...puddingsOfAllPlayers);
 
       if (puddingsOfPlayer === minPuddings) {
-        const totalPlayersWithMinPuddings = [
-          ...puddingsOfOtherPlayers,
-          puddingsOfPlayer,
-        ].reduce(
+        const totalPlayersWithMinPuddings = puddingsOfAllPlayers.reduce(
           (acc, puddings) => (puddings === minPuddings ? acc + 1 : acc),
           0
         );
@@ -78,21 +74,20 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
     let scoreToReturn = 0;
 
     const makiRollsOfOtherPlayers = players
-      .filter((p) => p.id !== player.id)
-      .map((p) => p.rounds[roundIndex].makiRollIcons);
+      .filter(({ id }) => id !== player.id)
+      .map(({ rounds }) => rounds[roundIndex].makiRollIcons);
 
     const makiRollsOfPlayer = player.rounds[roundIndex].makiRollIcons;
 
-    const maxMakiRolls = Math.max(
+    const makiRollsOfAllPlayers = [
       ...makiRollsOfOtherPlayers,
-      makiRollsOfPlayer
-    );
+      makiRollsOfPlayer,
+    ];
+
+    const maxMakiRolls = Math.max(...makiRollsOfAllPlayers);
 
     if (makiRollsOfPlayer === maxMakiRolls) {
-      const totalPlayersWithMaxMakiRolls = [
-        ...makiRollsOfOtherPlayers,
-        makiRollsOfPlayer,
-      ].reduce(
+      const totalPlayersWithMaxMakiRolls = makiRollsOfAllPlayers.reduce(
         (acc, makiRolls) => (makiRolls === maxMakiRolls ? acc + 1 : acc),
         0
       );
@@ -101,10 +96,9 @@ export const PlayerScore: React.FC<{ player: PlayerI }> = ({ player }) => {
     }
 
     if (makiRollsOfPlayer !== maxMakiRolls) {
-      const remainderMakiRolls = [
-        ...makiRollsOfOtherPlayers,
-        makiRollsOfPlayer,
-      ].filter((v) => v !== maxMakiRolls);
+      const remainderMakiRolls = makiRollsOfAllPlayers.filter(
+        (v) => v !== maxMakiRolls
+      );
 
       const secondMaxMakiRolls = Math.max(...remainderMakiRolls);
 

@@ -1,6 +1,6 @@
 import { PlayerI } from "./players/player.type";
 import * as uuid from "uuid";
-import { RoundI } from "./rounds/round.type";
+import { RoundI, RoundIndexesI } from "./rounds/round.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface SushiGoState {
@@ -41,7 +41,7 @@ export const sushiGoSlice = createSlice({
       action: PayloadAction<{
         playerId: string;
         data: RoundI;
-        roundIndex: 0 | 1 | 2;
+        roundIndex: RoundIndexesI;
       }>
     ) => {
       const { playerId, data, roundIndex } = action.payload;

@@ -34,6 +34,11 @@ export const PlayerControls: React.FC<{ player: PlayerI }> = ({ player }) => {
     );
   };
 
+  const handleNumericChange =
+    (field: PlayerInGameStateFields) =>
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
+      changeSingleValue(+event.target.value, field);
+
   const pushArrayValue = (
     value: number,
     field: keyof Pick<
@@ -55,11 +60,6 @@ export const PlayerControls: React.FC<{ player: PlayerI }> = ({ player }) => {
     newArr.splice(index, 1);
     return changeSingleValue(newArr, field);
   };
-
-  const handleNumericChange =
-    (field: PlayerInGameStateFields) =>
-    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
-      changeSingleValue(+event.target.value, field);
 
   return (
     <Stack alignItems="center" spacing={2}>

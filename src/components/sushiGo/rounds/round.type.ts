@@ -8,3 +8,5 @@ export interface RoundI {
   puddings: number;
   nigiriAndWasabi: NigiriAndWasabiI[];
 }
+
+export type RoundIndexesI = 0 | 1 | 2;

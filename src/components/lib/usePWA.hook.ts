@@ -10,9 +10,7 @@ const usePWA = () => {
   const [isInstallPromptSupported, setIsInstallPromptSupported] =
     useState(false);
 
-  const [promptInstall, setPromptInstall] = useState<
-    null | (() => Promise<boolean>)
-  >(null);
+  const [deferredEvent, setDeferredEvent] = useState<Event | null>(null);
 
   const [isStandalone, setIsStandalone] = useState(getStandalone());
 
@@ -21,25 +19,8 @@ const usePWA = () => {
       // Prevent install prompt from showing so we can prompt it later
       event.preventDefault();
 
-      const promptInstall = async () => {
-        const promptRes = await (
-          event as unknown as { prompt: () => { outcome: "accepted" } }
-        ).prompt();
-
-        setIsInstallPromptSupported(false);
-        setPromptInstall(null);
-
-        if (promptRes.outcome !== "accepted") {
-          return false;
-        }
-
-        setIsStandalone(getStandalone());
-
-        return true;
-      };
-
       setIsInstallPromptSupported(true);
-      setPromptInstall(() => promptInstall());
+      setDeferredEvent(event);
       setIsStandalone(getStandalone());
     };
 
@@ -80,6 +61,23 @@ const usePWA = () => {
         .removeEventListener("change", onMatchMedia);
     };
   }, []);
+
+  const promptInstall = async () => {
+    const promptRes = await (
+      deferredEvent as unknown as { prompt: () => { outcome: "accepted" } }
+    ).prompt();
+
+    setIsInstallPromptSupported(false);
+    setDeferredEvent(null);
+
+    if (promptRes.outcome !== "accepted") {
+      return false;
+    }
+
+    setIsStandalone(getStandalone());
+
+    return true;
+  };
 
   return {
     isStandalone,

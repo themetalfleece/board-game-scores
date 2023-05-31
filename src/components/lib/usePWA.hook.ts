@@ -63,20 +63,24 @@ const usePWA = () => {
   }, []);
 
   const promptInstall = async () => {
-    const promptRes = await (
-      deferredEvent as unknown as { prompt: () => { outcome: "accepted" } }
-    ).prompt();
+    try {
+      const promptRes = await (
+        deferredEvent as unknown as { prompt: () => { outcome: "accepted" } }
+      ).prompt();
 
-    setIsInstallPromptSupported(false);
-    setDeferredEvent(null);
+      if (promptRes.outcome !== "accepted") {
+        return false;
+      }
 
-    if (promptRes.outcome !== "accepted") {
-      return false;
+      setIsStandalone(getStandalone());
+
+      return true;
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsInstallPromptSupported(false);
+      setDeferredEvent(null);
     }
-
-    setIsStandalone(getStandalone());
-
-    return true;
   };
 
   return {

@@ -4,10 +4,10 @@
 
 ## Supported Board Games
 
-- ### [Lost Cities Rivals](https://scores.themetalfleece.dev/#/lost-cities-rivals)
-- ### [Ticket to Ride Europe](https://scores.themetalfleece.dev/#/ticket-to-ride-europe)
-- ### [Ohanami](https://scores.themetalfleece.dev/#/ohanami)
-- ### [Sushi Go](https://scores.themetalfleece.dev/#/sushi-go)
+- ### [Lost Cities Rivals](https://scores.themetalfleece.dev/lost-cities-rivals)
+- ### [Ticket to Ride Europe](https://scores.themetalfleece.dev/ticket-to-ride-europe)
+- ### [Ohanami](https://scores.themetalfleece.dev/ohanami)
+- ### [Sushi Go](https://scores.themetalfleece.dev/sushi-go)
 
 ### Development
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

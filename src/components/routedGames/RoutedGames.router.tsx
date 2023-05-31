@@ -7,7 +7,7 @@ import { TicketToRideEurope } from "../ticketToRideEurope/TicketToRideEurope.pag
 import { SushiGo } from "../sushiGo/SushiGo.page";
 import { gameRoutes } from "./gameRoutes";
 
-export const RoutedGames: React.FC<{}> = () => {
+export const RoutedGames: React.FC = () => {
   return (
     <Routes>
       <Route

@@ -5,7 +5,7 @@ import { AddPlayerButton } from "./players/AddPlayerButton.component";
 import { PlayerCard } from "./players/PlayerCard.component";
 import { useSelector } from "./useSelector.hook";
 
-export const LostCitiesRivals: React.FC<{}> = () => {
+export const LostCitiesRivals: React.FC = () => {
   const state = useSelector();
 
   const { players } = state;

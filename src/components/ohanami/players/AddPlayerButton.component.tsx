@@ -3,7 +3,7 @@ import { useAppDispatch } from "../../../store/useAppDispatch.hook";
 import { addPlayer } from "../ohanami.slice";
 import { useSelector } from "../useSelector.hook";
 
-export const AddPlayerButton: React.FC<{}> = () => {
+export const AddPlayerButton: React.FC = () => {
   const store = useSelector();
   const dispatch = useAppDispatch();
 

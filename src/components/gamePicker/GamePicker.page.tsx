@@ -3,7 +3,7 @@ import { GameChooseButton } from "./GameChooseButton.component";
 import { gameRoutes } from "../routedGames/gameRoutes";
 import { InstallationInfo } from "../info/InstallationInfo.component";
 
-export const GamePicker: React.FC<{}> = () => {
+export const GamePicker: React.FC = () => {
   return (
     <Stack alignItems="center" sx={{ gap: (theme) => theme.spacing(1) }}>
       <Typography variant="h4">Choose your game</Typography>
@@ -24,9 +24,9 @@ export const GamePicker: React.FC<{}> = () => {
         <GameChooseButton gamePath={gameRoutes.sushiGo}>
           Sushi Go
         </GameChooseButton>
-      </Stack>
 
-      <InstallationInfo />
+        <InstallationInfo sx={{ width: "100%", mt: "8px" }} />
+      </Stack>
     </Stack>
   );
 };

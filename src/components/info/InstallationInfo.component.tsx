@@ -6,8 +6,6 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Stack,
-  Typography,
 } from "@mui/material";
 import usePWA from "../lib/usePWA.hook";
 import { useState } from "react";
@@ -17,9 +15,9 @@ export const InstallationInfo: React.FC<ButtonProps> = (props) => {
 
   const [isDialogOpen, setDialogOpen] = useState(false);
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     if (isInstallPromptSupported && promptInstall) {
-      promptInstall();
+      await promptInstall();
     } else {
       setDialogOpen(true);
     }
@@ -42,30 +40,26 @@ export const InstallationInfo: React.FC<ButtonProps> = (props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id="alert-dialog-title" textAlign="center">
           You can install this as an App!
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <Stack alignItems="center" sx={{ mt: 3 }}>
-              <Typography variant="body2">
-                <b>Android</b>
-                <br />
-                Just select the corresponding button from your browser's menu:
-                <br />
-                Add to phone, Add to home screen, or something similar.
-                <br />
-                <br />
-                <b>iOS Safari</b>
-                <br />
-                Share `{"->"}` Add to Home Screen.
-                <br />
-                <br />
-                <b>Desktop</b>
-                <br />
-                Look for the install button in the address bar.
-              </Typography>
-            </Stack>
+          <DialogContentText id="alert-dialog-description" textAlign="center">
+            <b>Android</b>
+            <br />
+            Just select the corresponding button from your browser's menu:
+            <br />
+            Add to phone, Add to home screen, or something similar.
+            <br />
+            <br />
+            <b>iOS Safari</b>
+            <br />
+            Share `{"->"}` Add to Home Screen.
+            <br />
+            <br />
+            <b>Desktop</b>
+            <br />
+            Look for the install button in the address bar.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -26,6 +26,9 @@ const usePWA = () => {
           event as unknown as { prompt: () => { outcome: "accepted" } }
         ).prompt();
 
+        setIsInstallPromptSupported(false);
+        setPromptInstall(null);
+
         if (promptRes.outcome !== "accepted") {
           return false;
         }
@@ -36,7 +39,7 @@ const usePWA = () => {
       };
 
       setIsInstallPromptSupported(true);
-      setPromptInstall(promptInstall);
+      setPromptInstall(() => promptInstall());
       setIsStandalone(getStandalone());
     };
 

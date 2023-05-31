@@ -2,7 +2,7 @@
   "name": "board-game-scores",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://themetalfleece.github.io/board-game-scores/",
+  "homepage": "https://scores.themetalfleece.dev/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -42,9 +42,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -65,7 +63,6 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4",
-    "gh-pages": "^4.0.0"
+    "@types/uuid": "^8.3.4"
   }
 }

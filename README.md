@@ -1,13 +1,13 @@
 # Board game scores
 
-# [Application link](https://themetalfleece.github.io/board-game-scores/)
+# [Application link](https://scores.themetalfleece.dev/)
 
 ## Supported Board Games
 
-- ### [Lost Cities Rivals](https://themetalfleece.github.io/board-game-scores/#/lost-cities-rivals)
-- ### [Ticket to Ride Europe](https://themetalfleece.github.io/board-game-scores/#/ticket-to-ride-europe)
-- ### [Ohanami](https://themetalfleece.github.io/board-game-scores/#/ohanami)
-- ### [Sushi Go](https://themetalfleece.github.io/board-game-scores/#/sushi-go)
+- ### [Lost Cities Rivals](https://scores.themetalfleece.dev/#/lost-cities-rivals)
+- ### [Ticket to Ride Europe](https://scores.themetalfleece.dev/#/ticket-to-ride-europe)
+- ### [Ohanami](https://scores.themetalfleece.dev/#/ohanami)
+- ### [Sushi Go](https://scores.themetalfleece.dev/#/sushi-go)
 
 ### Development
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -33,10 +33,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-##### `yarn deploy`
-
-Deploys the application to GitHub pages, using the [gh-pages](https://www.npmjs.com/package/gh-pages) package.
 
 #### Learn More
 

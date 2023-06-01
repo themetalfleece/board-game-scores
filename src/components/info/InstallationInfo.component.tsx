@@ -16,7 +16,7 @@ export const InstallationInfo: React.FC<ButtonProps> = (props) => {
   const [isDialogOpen, setDialogOpen] = useState(false);
 
   const onButtonClick = async () => {
-    if (isInstallPromptSupported && promptInstall) {
+    if (isInstallPromptSupported) {
       await promptInstall();
     } else {
       setDialogOpen(true);
